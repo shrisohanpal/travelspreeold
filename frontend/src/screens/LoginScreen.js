@@ -69,9 +69,12 @@ const LoginScreen = ({ match, location, history }) =>
 
             <Row className='py-3'>
                 <Col>
-                    New Student?{' '}
-                    <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-                        Register
+                    <Link to={'/forgotpassword'}>
+                        Forgot Password
+                    </Link>
+                    {' '}OR{' '}
+                    <Link to={redirect ? `/ register ? redirect = ${redirect}` : '/register'}>
+                        New Customer? Register
                     </Link>
                 </Col>
             </Row>

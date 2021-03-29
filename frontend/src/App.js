@@ -11,6 +11,10 @@ import ProfileScreen from './screens/ProfileScreen'
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen'
 import UserListScreen from './screens/UserListScreen'
 import UserEditScreen from './screens/UserEditScreen'
+import PackageListScreen from './screens/PackageListScreen'
+import PackageEditScreen from './screens/PackageEditScreen'
+import DestinationListScreen from './screens/DestinationListScreen'
+import DestinationEditScreen from './screens/DestinationEditScreen'
 
 const App = () =>
 {
@@ -26,6 +30,13 @@ const App = () =>
 
                 <Route path='/admin/userlist' component={UserListScreen} />
                 <Route path='/admin/user/:id/edit' component={UserEditScreen} />
+
+                <Route path='/admin/packagelist' component={PackageListScreen} />
+                <Route path='/admin/package/:id/edit' component={PackageEditScreen} />
+
+                <Route path='/admin/destinationlist' component={DestinationListScreen} />
+                <Route path='/admin/destination/:id/edit' component={DestinationEditScreen} />
+
             </main>
             <Footer />
         </Router>

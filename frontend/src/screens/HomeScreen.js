@@ -59,7 +59,7 @@ const HomeScreen = ({ match }) =>
                     <div className='py-3 my-3'>
                         <div className='py-3 my-3'>
                             <div className='py-3 my-3'>
-                                <h1>ADSSSSSSSSSSSSSSSSSS</h1>
+                                <h1>ADS</h1>
                             </div>
                         </div>
                     </div>
