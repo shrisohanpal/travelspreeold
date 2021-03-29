@@ -145,7 +145,7 @@ export const createPackage = () => async (dispatch, getState) =>
     }
 }
 
-export const updatePackage = (package) => async (dispatch, getState) =>
+export const updatePackage = (singlePackage) => async (dispatch, getState) =>
 {
     try {
         dispatch({
@@ -164,8 +164,8 @@ export const updatePackage = (package) => async (dispatch, getState) =>
         }
 
         const { data } = await axios.put(
-            `/api/packages/${package._id}`,
-            package,
+            `/api/packages/${singlePackage._id}`,
+            singlePackage,
             config
         )
 
