@@ -20,11 +20,12 @@ const Header = () =>
                 {window.innerWidth > 780 && (
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto ml-3">
-                            <Nav.Link className="mx-3" href="#home">Search</Nav.Link>
-                            <Nav.Link className="mx-3" href="#link">Popolar Destinations</Nav.Link>
-                            <Nav.Link className="mx-3" href="#link">Contact Us</Nav.Link>
+                            <Nav.Link className="mx-3" href="#home"><i className='fas fa-search' /> Search</Nav.Link>
+                            <Nav.Link className="mx-3" href="#link"><i className='fas fa-map-marker-alt' /> Popolar Destinations</Nav.Link>
+                            <Nav.Link className="mx-3" href="#link"><i className='fas fa-address-book' /> Contact Us</Nav.Link>
                         </Nav>
-                        <Nav.Link href="#link">My Account</Nav.Link>
+                        <Nav.Link href="#link"><i className='far fa-user' /> My Account</Nav.Link>
+                        <Nav.Link href="#link"><i className='far fa-user' /> My Account</Nav.Link>
                     </Navbar.Collapse>
                 )}
             </Navbar>

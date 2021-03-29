@@ -15,7 +15,7 @@ const destinationSchema = mongoose.Schema(
             type: String,
             required: true,
         },
-        description: {
+        address: {
             type: String,
             required: true,
         },
@@ -26,6 +26,10 @@ const destinationSchema = mongoose.Schema(
             lon: {
                 type: Number
             }
+        },
+        tours: {
+            type: Number,
+            default: 0
         }
     },
     {
