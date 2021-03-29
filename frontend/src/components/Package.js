@@ -1,31 +1,37 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Card } from 'react-bootstrap'
+import { Card, Button, Row } from 'react-bootstrap'
 import Rating from './Rating'
 
-const Package = ({ product }) =>
+const Package = ({ singlePackage }) =>
 {
     return (
-        <Card className='my-3 p-3 rounded'>
-            <Link to={`/product/${product._id}`}>
-                <Card.Img src={product.image} variant='top' />
+        <Card className='my-3 rounded'>
+            <Link to={`/product/${singlePackage._id}`}>
+                <Card.Img src={singlePackage.image} variant='top' />
             </Link>
 
             <Card.Body>
-                <Link to={`/product/${product._id}`}>
-                    <Card.Title as='div'>
-                        <strong>{product.name}</strong>
-                    </Card.Title>
-                </Link>
+                <Card.Title as='h5'>
+                    <strong>{singlePackage.name}</strong>
+                </Card.Title>
+
+                <Card.Title as='h6'>
+                    <strong>{singlePackage.description} ₹{singlePackage.price}/- </strong>
+                </Card.Title>
 
                 <Card.Text as='div'>
-                    <Rating
-                        value={product.rating}
-                        text={`${product.numReviews} reviews`}
-                    />
-                </Card.Text>
+                    <Row>
+                        <Link to='/' className='mx-3 pr-3'>
+                            <Button >Book Now</Button>
+                        </Link>
+                        <Rating
+                            value={singlePackage.rating}
+                            text={`${singlePackage.numReviews} reviews`}
+                        />
+                    </Row>
 
-                <Card.Text as='h3'>${product.price}</Card.Text>
+                </Card.Text>
             </Card.Body>
         </Card>
     )

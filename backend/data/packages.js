@@ -1,19 +1,57 @@
 const packages = [
     {
-        name: 'Airpods Wireless Bluetooth Headphones',
-        image: '/images/airpods.jpg',
+        name: 'Dubai – All Stunning Places',
+        image: '/uploads//1.jpg',
         description:
-            'Bluetooth -in microphone allows you to take calls while working',
-        price: 120,
-        rating: 0,
+            '4 Days, 5 Nights Start From',
+        price: 500 * 70,
+        rating: 5,
+        numReviews: 1000
     },
     {
-        name: 'Airpods Wireless Bluetooth Headphones',
-        image: '/images/airpods.jpg',
+        name: 'Thailand – All Stunning Places',
+        image: '/uploads//2.jpg',
         description:
-            'Bluetooth -in microphone allows you to take calls while working',
-        price: 120,
-        rating: 0,
+            '4 Days, 5 Nights Start From',
+        price: 500 * 70,
+        rating: 5,
+        numReviews: 1000
+    },
+    {
+        name: 'England – All Stunning Places',
+        image: '/uploads//3.jpg',
+        description:
+            '4 Days, 5 Nights Start From',
+        price: 500 * 70,
+        rating: 5,
+        numReviews: 1000
+    },
+    {
+        name: 'Italy – All Stunning Places',
+        image: '/uploads//4.jpg',
+        description:
+            '4 Days, 5 Nights Start From',
+        price: 500 * 70,
+        rating: 5,
+        numReviews: 1000
+    },
+    {
+        name: 'Brazil – All Stunning Places',
+        image: '/uploads//5.jpg',
+        description:
+            '4 Days, 5 Nights Start From',
+        price: 500 * 70,
+        rating: 5,
+        numReviews: 1000
+    },
+    {
+        name: 'India – All Stunning Places',
+        image: '/uploads//6.jpg',
+        description:
+            '4 Days, 5 Nights Start From',
+        price: 500 * 70,
+        rating: 5,
+        numReviews: 1000
     }
 ]
 

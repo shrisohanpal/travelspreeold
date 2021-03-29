@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Container, Row, Col } from 'react-bootstrap'
+import Search from '../components/Search'
 import Package from '../components/Package'
 import Message from '../components/Message'
 import Loader from '@material-ui/core/CircularProgress'
@@ -28,6 +29,7 @@ const HomeScreen = ({ match }) =>
     return (
         <Container>
             <Meta />
+            <Search />
             <center>
                 <h1>Our Most Popular Packages</h1>
                 <p>these are our most popular packages. This is the Description</p>
@@ -41,9 +43,9 @@ const HomeScreen = ({ match }) =>
             ) : (
                 <>
                     <Row>
-                        {packages.map((product) => (
-                            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                                <Package product={product} />
+                        {packages.map((singlePackage) => (
+                            <Col key={singlePackage._id} sm={12} md={6} lg={4} xl={4}>
+                                <Package singlePackage={singlePackage} />
                             </Col>
                         ))}
                     </Row>
@@ -76,9 +78,9 @@ const HomeScreen = ({ match }) =>
             ) : (
                 <>
                     <Row>
-                        {packages.map((product) => (
-                            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                                <Package product={product} />
+                        {packages.map((singlePackage) => (
+                            <Col key={singlePackage._id} sm={12} md={6} lg={4} xl={3}>
+                                <Package singlePackage={singlePackage} />
                             </Col>
                         ))}
                     </Row>
