@@ -3,6 +3,23 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import
 {
+    packageListReducer,
+    packageDetailsReducer,
+    packageDeleteReducer,
+    packageCreateReducer,
+    packageUpdateReducer,
+    packageReviewCreateReducer,
+} from './reducers/packageReducers'
+import
+{
+    destinationListReducer,
+    destinationDetailsReducer,
+    destinationDeleteReducer,
+    destinationCreateReducer,
+    destinationUpdateReducer,
+} from './reducers/destinationReducers'
+import
+{
     userLoginReducer,
     userRegisterReducer,
     userDetailsReducer,
@@ -15,6 +32,19 @@ import
 
 
 const reducer = combineReducers({
+    packageList: packageListReducer,
+    packageDetails: packageDetailsReducer,
+    packageDelete: packageDeleteReducer,
+    packageCreate: packageCreateReducer,
+    packageUpdate: packageUpdateReducer,
+    packageReviewCreate: packageReviewCreateReducer,
+
+    destinationList: destinationListReducer,
+    destinationDetails: destinationDetailsReducer,
+    destinationDelete: destinationDeleteReducer,
+    destinationCreate: destinationCreateReducer,
+    destinationUpdate: destinationUpdateReducer,
+
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,
     userDetails: userDetailsReducer,
@@ -23,7 +53,6 @@ const reducer = combineReducers({
     userList: userListReducer,
     userDelete: userDeleteReducer,
     userUpdate: userUpdateReducer,
-
 })
 
 const userInfoFromStorage = localStorage.getItem('userInfo')
