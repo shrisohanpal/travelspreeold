@@ -27,14 +27,18 @@ const Header = () =>
                 </Navbar>
             )}
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="#home">Travel Spree</Navbar.Brand>
+                <LinkContainer to='/'>
+                    <Navbar.Brand>Travel Spree</Navbar.Brand>
+                </LinkContainer>
                 <Navbar.Toggle onClick={() => setDrawerOpen(true)} />
                 {window.innerWidth > 780 && (
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto ml-3">
                             <Nav.Link className="mx-3" href="#home"><i className='fas fa-search' /> Search</Nav.Link>
                             <Nav.Link className="mx-3" href="#link"><i className='fas fa-map-marker-alt' /> Popolar Destinations</Nav.Link>
-                            <Nav.Link className="mx-3" href="#link"><i className='fas fa-address-book' /> Contact Us</Nav.Link>
+                            <LinkContainer to='/contact'>
+                                <Nav.Link className="mx-3"><i className='fas fa-address-book' /> Contact Us</Nav.Link>
+                            </LinkContainer>
                         </Nav>
                         {userInfo && userInfo.isAdmin && (
                             <NavDropdown title='Admin' id='adminmenu'>
@@ -65,13 +69,15 @@ const Header = () =>
                         <Button className='ml-auto' onClick={() => setDrawerOpen(false)}><i className='fas fa-times' /></Button>
                     </ListItem>
                     <ListItem>
-                        <Nav.Link className="mx-3" href="#home"><i className='fas fa-search' /> Search</Nav.Link>
+                        <Nav.Link ><i className='fas fa-search' /> Search</Nav.Link>
                     </ListItem>
                     <ListItem>
-                        <Nav.Link className="mx-3" href="#link"><i className='fas fa-map-marker-alt' /> Popolar Destinations</Nav.Link>
+                        <Nav.Link ><i className='fas fa-map-marker-alt' /> Popolar Destinations</Nav.Link>
                     </ListItem>
                     <ListItem>
-                        <Nav.Link className="mx-3" href="#link"><i className='fas fa-address-book' /> Contact Us</Nav.Link>
+                        <LinkContainer to='/contact'>
+                            <Nav.Link><i className='fas fa-address-book' /> Contact Us</Nav.Link>
+                        </LinkContainer>
                     </ListItem>
                 </List>
             </Drawer>

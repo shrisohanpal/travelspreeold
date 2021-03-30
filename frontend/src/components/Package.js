@@ -7,7 +7,7 @@ const Package = ({ singlePackage }) =>
 {
     return (
         <Card className='my-3 rounded'>
-            <Link to={`/product/${singlePackage._id}`}>
+            <Link to={`/package/${singlePackage._id}`}>
                 <Card.Img src={singlePackage.image} variant='top' />
             </Link>
 
@@ -22,7 +22,7 @@ const Package = ({ singlePackage }) =>
 
                 <Card.Text as='div'>
                     <Row>
-                        <Link to='/' className='mx-3 pr-3'>
+                        <Link to={`/package/${singlePackage._id}`} className='mx-3 pr-3'>
                             <Button >Book Now</Button>
                         </Link>
                         <Rating

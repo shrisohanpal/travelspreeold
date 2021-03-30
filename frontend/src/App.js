@@ -4,6 +4,8 @@ import { Container } from 'react-bootstrap'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen'
+import PackageScreen from './screens/PackageScreen'
+import ContactScreen from './screens/ContactScreen'
 
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
@@ -23,6 +25,8 @@ const App = () =>
             <Header />
             <main className='py-3'>
                 <Route path='/' component={HomeScreen} exact />
+                <Route path='/package/:id' component={PackageScreen} />
+                <Route path='/contact' component={ContactScreen} />
                 <Route path='/login' component={LoginScreen} />
                 <Route path='/register' component={RegisterScreen} />
                 <Route path='/profile' component={ProfileScreen} />
