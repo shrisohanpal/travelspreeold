@@ -29,7 +29,15 @@ import
     userDeleteReducer,
     userUpdateReducer,
 } from './reducers/userReducers'
-
+import
+{
+    bookingCreateReducer,
+    bookingDetailsReducer,
+    bookingPayReducer,
+    bookingDeliverReducer,
+    bookingListMyReducer,
+    bookingListReducer,
+} from './reducers/bookingReducers'
 
 const reducer = combineReducers({
     packageList: packageListReducer,
@@ -53,6 +61,13 @@ const reducer = combineReducers({
     userList: userListReducer,
     userDelete: userDeleteReducer,
     userUpdate: userUpdateReducer,
+
+    bookingCreate: bookingCreateReducer,
+    bookingDetails: bookingDetailsReducer,
+    bookingPay: bookingPayReducer,
+    bookingDeliver: bookingDeliverReducer,
+    bookingListMy: bookingListMyReducer,
+    bookingList: bookingListReducer,
 })
 
 const userInfoFromStorage = localStorage.getItem('userInfo')

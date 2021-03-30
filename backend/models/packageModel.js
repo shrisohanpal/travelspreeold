@@ -57,6 +57,6 @@ const packageSchema = mongoose.Schema(
     }
 )
 
-const singlePackage = mongoose.model('package', packageSchema)
+const singlePackage = mongoose.model('Package', packageSchema)
 
 export default singlePackage
