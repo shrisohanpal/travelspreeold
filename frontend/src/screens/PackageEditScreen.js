@@ -14,12 +14,9 @@ const PackageEditScreen = ({ match, history }) =>
     const packageId = match.params.id
 
     const [name, setName] = useState('')
-    const [price, setPrice] = useState(0)
-    const [image, setImage] = useState('')
-    const [brand, setBrand] = useState('')
-    const [category, setCategory] = useState('')
-    const [countInStock, setCountInStock] = useState(0)
     const [description, setDescription] = useState('')
+    const [image, setImage] = useState('')
+    const [price, setPrice] = useState(0)
     const [uploading, setUploading] = useState(false)
 
     const dispatch = useDispatch()
@@ -40,15 +37,13 @@ const PackageEditScreen = ({ match, history }) =>
             dispatch({ type: PACKAGE_UPDATE_RESET })
             history.push('/admin/packagelist')
         } else {
-            if (!singlePackage.name || singlePackage._id !== packageId) {
+            if (!singlePackage || !singlePackage.name || singlePackage._id !== packageId) {
                 dispatch(listPackageDetails(packageId))
             } else {
                 setName(singlePackage.name)
-                setPrice(singlePackage.price)
-                setImage(singlePackage.image)
-                setBrand(singlePackage.brand)
-                setCategory(singlePackage.category)
                 setDescription(singlePackage.description)
+                setImage(singlePackage.image)
+                setPrice(singlePackage.price)
             }
         }
     }, [dispatch, history, packageId, singlePackage, successUpdate])
@@ -86,10 +81,7 @@ const PackageEditScreen = ({ match, history }) =>
                 name,
                 price,
                 image,
-                brand,
-                category,
                 description,
-                countInStock,
             })
         )
     }
@@ -144,36 +136,6 @@ const PackageEditScreen = ({ match, history }) =>
                                 onChange={uploadFileHandler}
                             ></Form.File>
                             {uploading && <Loader />}
-                        </Form.Group>
-
-                        <Form.Group controlId='brand'>
-                            <Form.Label>Brand</Form.Label>
-                            <Form.Control
-                                type='text'
-                                placeholder='Enter brand'
-                                value={brand}
-                                onChange={(e) => setBrand(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-
-                        <Form.Group controlId='countInStock'>
-                            <Form.Label>Count In Stock</Form.Label>
-                            <Form.Control
-                                type='number'
-                                placeholder='Enter countInStock'
-                                value={countInStock}
-                                onChange={(e) => setCountInStock(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-
-                        <Form.Group controlId='category'>
-                            <Form.Label>Category</Form.Label>
-                            <Form.Control
-                                type='text'
-                                placeholder='Enter category'
-                                value={category}
-                                onChange={(e) => setCategory(e.target.value)}
-                            ></Form.Control>
                         </Form.Group>
 
                         <Form.Group controlId='description'>

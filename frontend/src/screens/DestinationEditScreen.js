@@ -14,12 +14,9 @@ const DestinationEditScreen = ({ match, history }) =>
     const destinationId = match.params.id
 
     const [name, setName] = useState('')
-    const [price, setPrice] = useState(0)
+    const [address, setAddress] = useState('')
+    const [tours, setTours] = useState(0)
     const [image, setImage] = useState('')
-    const [brand, setBrand] = useState('')
-    const [category, setCategory] = useState('')
-    const [countInStock, setCountInStock] = useState(0)
-    const [description, setDescription] = useState('')
     const [uploading, setUploading] = useState(false)
 
     const dispatch = useDispatch()
@@ -44,12 +41,9 @@ const DestinationEditScreen = ({ match, history }) =>
                 dispatch(listDestinationDetails(destinationId))
             } else {
                 setName(destination.name)
-                setPrice(destination.price)
+                setAddress(destination.address)
+                setTours(destination.tours)
                 setImage(destination.image)
-                setBrand(destination.brand)
-                setCategory(destination.category)
-                setCountInStock(destination.countInStock)
-                setDescription(destination.description)
             }
         }
     }, [dispatch, history, destinationId, destination, successUpdate])
@@ -85,12 +79,9 @@ const DestinationEditScreen = ({ match, history }) =>
             updateDestination({
                 _id: destinationId,
                 name,
-                price,
-                image,
-                brand,
-                category,
-                description,
-                countInStock,
+                address,
+                tours,
+                image
             })
         )
     }
@@ -120,13 +111,23 @@ const DestinationEditScreen = ({ match, history }) =>
                             ></Form.Control>
                         </Form.Group>
 
-                        <Form.Group controlId='price'>
-                            <Form.Label>Price</Form.Label>
+                        <Form.Group controlId='address'>
+                            <Form.Label>Address</Form.Label>
+                            <Form.Control
+                                type='text'
+                                placeholder='Enter address'
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
+                            ></Form.Control>
+                        </Form.Group>
+
+                        <Form.Group controlId='tours'>
+                            <Form.Label>Tours</Form.Label>
                             <Form.Control
                                 type='number'
-                                placeholder='Enter price'
-                                value={price}
-                                onChange={(e) => setPrice(e.target.value)}
+                                placeholder='Enter tours'
+                                value={tours}
+                                onChange={(e) => setTours(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
 
@@ -147,49 +148,9 @@ const DestinationEditScreen = ({ match, history }) =>
                             {uploading && <Loader />}
                         </Form.Group>
 
-                        <Form.Group controlId='brand'>
-                            <Form.Label>Brand</Form.Label>
-                            <Form.Control
-                                type='text'
-                                placeholder='Enter brand'
-                                value={brand}
-                                onChange={(e) => setBrand(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-
-                        <Form.Group controlId='countInStock'>
-                            <Form.Label>Count In Stock</Form.Label>
-                            <Form.Control
-                                type='number'
-                                placeholder='Enter countInStock'
-                                value={countInStock}
-                                onChange={(e) => setCountInStock(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-
-                        <Form.Group controlId='category'>
-                            <Form.Label>Category</Form.Label>
-                            <Form.Control
-                                type='text'
-                                placeholder='Enter category'
-                                value={category}
-                                onChange={(e) => setCategory(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-
-                        <Form.Group controlId='description'>
-                            <Form.Label>Description</Form.Label>
-                            <Form.Control
-                                type='text'
-                                placeholder='Enter description'
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-
                         <Button type='submit' variant='primary'>
                             Update
-            </Button>
+                        </Button>
                     </Form>
                 )}
             </FormContainer>

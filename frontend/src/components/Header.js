@@ -14,9 +14,18 @@ const Header = () =>
 
     return (
         <div>
-            <Navbar bg='dark' variant='dark'>
-                <Nav.Link href="#home">Home</Nav.Link>
-            </Navbar>
+            {window.innerWidth > 780 && (
+                <Navbar bg='dark' variant='dark' className='py-0 my-0'>
+                    <Nav.Link href="/"><i className='fas fa-envelope' /> info@travelspree.com</Nav.Link>
+                    <Nav.Link href="/"><i className='fas fa-map-marker-alt' /> India</Nav.Link>
+                    <Nav className="ml-auto">
+                        <Nav.Link href="/"><i className='fab fa-facebook' /></Nav.Link>
+                        <Nav.Link href="/"><i className='fab fa-google' /></Nav.Link>
+                        <Nav.Link href="/"><i className='fab fa-twitter' /></Nav.Link>
+                        <Nav.Link href="/"><i className='fab fa-instagram' /></Nav.Link>
+                    </Nav>
+                </Navbar>
+            )}
             <Navbar bg="light" expand="lg">
                 <Navbar.Brand href="#home">Travel Spree</Navbar.Brand>
                 <Navbar.Toggle onClick={() => setDrawerOpen(true)} />
@@ -54,6 +63,15 @@ const Header = () =>
                     <ListItem>
                         <ListItemText primary={<div style={{ fontWeight: 'bold', fontSize: 20 }}>Travel Spree</div>} />
                         <Button className='ml-auto' onClick={() => setDrawerOpen(false)}><i className='fas fa-times' /></Button>
+                    </ListItem>
+                    <ListItem>
+                        <Nav.Link className="mx-3" href="#home"><i className='fas fa-search' /> Search</Nav.Link>
+                    </ListItem>
+                    <ListItem>
+                        <Nav.Link className="mx-3" href="#link"><i className='fas fa-map-marker-alt' /> Popolar Destinations</Nav.Link>
+                    </ListItem>
+                    <ListItem>
+                        <Nav.Link className="mx-3" href="#link"><i className='fas fa-address-book' /> Contact Us</Nav.Link>
                     </ListItem>
                 </List>
             </Drawer>

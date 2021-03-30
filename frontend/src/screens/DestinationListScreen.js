@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Container, Table, Button, Row, Col } from 'react-bootstrap'
+import { Container, Table, Button, Row, Col, Image } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '@material-ui/core/CircularProgress'
@@ -99,22 +99,22 @@ const DestinationListScreen = ({ history, match }) =>
                     <Table striped bordered hover responsive className='table-sm'>
                         <thead>
                             <tr>
+                                <th></th>
                                 <th>ID</th>
                                 <th>NAME</th>
-                                <th>PRICE</th>
-                                <th>CATEGORY</th>
-                                <th>BRAND</th>
+                                <th>ADDRESS</th>
+                                <th>TOURS</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             {destinations.map((destination) => (
                                 <tr key={destination._id}>
+                                    <td style={{ width: 60 }}><Image src={destination.image} style={{ width: 40, height: 40, borderRadius: 2 }} /></td>
                                     <td>{destination._id}</td>
                                     <td>{destination.name}</td>
-                                    <td>${destination.price}</td>
-                                    <td>{destination.category}</td>
-                                    <td>{destination.brand}</td>
+                                    <td>{destination.address}</td>
+                                    <td>{destination.tours}</td>
                                     <td>
                                         <LinkContainer to={`/admin/destination/${destination._id}/edit`}>
                                             <Button variant='light' className='btn-sm'>

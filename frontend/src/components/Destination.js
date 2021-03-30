@@ -20,8 +20,8 @@ const Destination = ({ destination }) =>
 
                 <Card.Text as='div'>
                     <Row>
-                        <div className='px-3'>{destination.name}</div>
-                        <strong>{destination.tours}Tours</strong>
+                        <div className='pl-3'>{destination.name}</div>
+                        <strong className='pl-3'>{destination.tours}Tours</strong>
                     </Row>
 
                 </Card.Text>
