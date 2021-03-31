@@ -68,7 +68,10 @@ const ProfileScreen = ({ location, history }) =>
                     {loading ? (
                         <CircularProgress />
                     ) : error ? (
-                        <Message variant='danger'>{error}</Message>
+                        <>
+                            <Message variant='danger'>{error}</Message>
+                            <Button variant='danger' className='mx-3' onClick={() => window.confirm('Are you sure to Logout?') && dispatch(logout())}>Logout</Button>
+                        </>
                     ) : (
                         <Form onSubmit={submitHandler}>
                             <Form.Group controlId='name'>
