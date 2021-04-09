@@ -9,7 +9,7 @@ import connectDB from './config/db.js'
 import packageRoutes from './routes/packageRoutes.js'
 import destinationRoutes from './routes/destinationRoutes.js'
 import userRoutes from './routes/userRoutes.js'
-//import orderRoutes from './routes/orderRoutes.js'
+import bookingRoutes from './routes/bookingRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 import contactmailRoutes from './routes/contactmailRoutes.js'
 
@@ -28,7 +28,7 @@ app.use(express.json())
 app.use('/api/packages', packageRoutes)
 app.use('/api/destinations', destinationRoutes)
 app.use('/api/users', userRoutes)
-//app.use('/api/orders', orderRoutes)
+app.use('/api/bookings', bookingRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/contactmail', contactmailRoutes)
 

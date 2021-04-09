@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen'
 import PackageScreen from './screens/PackageScreen'
+import PlaceBookingScreen from './screens/PlaceBookingScreen'
 import ContactScreen from './screens/ContactScreen'
 
 import LoginScreen from './screens/LoginScreen'
@@ -17,6 +18,7 @@ import PackageListScreen from './screens/PackageListScreen'
 import PackageEditScreen from './screens/PackageEditScreen'
 import DestinationListScreen from './screens/DestinationListScreen'
 import DestinationEditScreen from './screens/DestinationEditScreen'
+import BookingListScreen from './screens/BookingListScreen'
 
 const App = () =>
 {
@@ -26,6 +28,7 @@ const App = () =>
             <main className='py-3'>
                 <Route path='/' component={HomeScreen} exact />
                 <Route path='/package/:id' component={PackageScreen} />
+                <Route path='/placebooking/:id' component={PlaceBookingScreen} />
                 <Route path='/contact' component={ContactScreen} />
                 <Route path='/login' component={LoginScreen} />
                 <Route path='/register' component={RegisterScreen} />
@@ -41,6 +44,7 @@ const App = () =>
                 <Route path='/admin/destinationlist' component={DestinationListScreen} />
                 <Route path='/admin/destination/:id/edit' component={DestinationEditScreen} />
 
+                <Route path='/admin/bookinglist' component={BookingListScreen} />
             </main>
             <Footer />
         </Router>

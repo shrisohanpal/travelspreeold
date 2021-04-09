@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Table, Button } from 'react-bootstrap'
+import { Container, Table, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
-import Loader from '../components/Loader'
+import Loader from '@material-ui/core/CircularProgress'
 import { listBookings } from '../actions/bookingActions'
 
 const BookingListScreen = ({ history }) =>
@@ -26,7 +26,7 @@ const BookingListScreen = ({ history }) =>
     }, [dispatch, history, userInfo])
 
     return (
-        <>
+        <Container>
             <h1>Bookings</h1>
             {loading ? (
                 <Loader />
@@ -78,7 +78,7 @@ const BookingListScreen = ({ history }) =>
                     </tbody>
                 </Table>
             )}
-        </>
+        </Container>
     )
 }
 

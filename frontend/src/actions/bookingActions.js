@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { CART_CLEAR_ITEMS } from '../constants/cartConstants'
+//import { CART_CLEAR_ITEMS } from '../constants/cartConstants'
 import
 {
     BOOKING_CREATE_REQUEST,
@@ -47,11 +47,11 @@ export const createBooking = (booking) => async (dispatch, getState) =>
             type: BOOKING_CREATE_SUCCESS,
             payload: data,
         })
-        dispatch({
-            type: CART_CLEAR_ITEMS,
-            payload: data,
-        })
-        localStorage.removeItem('cartItems')
+        /*    dispatch({
+                type: CART_CLEAR_ITEMS,
+                payload: data,
+            })
+            localStorage.removeItem('cartItems')*/
     } catch (error) {
         const message =
             error.response && error.response.data.message

@@ -73,7 +73,7 @@ const LoginScreen = ({ match, location, history }) =>
                         Forgot Password
                     </Link>
                     {' '}OR{' '}
-                    <Link to={redirect ? `/ register ? redirect = ${redirect}` : '/register'}>
+                    <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
                         New Customer? Register
                     </Link>
                 </Col>

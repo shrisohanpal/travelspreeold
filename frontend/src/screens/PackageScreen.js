@@ -48,7 +48,7 @@ const PackageScreen = ({ history, match }) =>
 
     const addToCartHandler = () =>
     {
-        history.push(`/placeorder/${match.params.id}`)
+        history.push(`/placebooking/${match.params.id}`)
     }
 
     const submitHandler = (e) =>
